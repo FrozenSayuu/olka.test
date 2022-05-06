@@ -185,6 +185,23 @@ function travel_soccer() {
 
 add_action( 'init', 'travel_soccer', 5 );
 
+function netr_team() {
+	register_post_type( 'netr_team', [
+		'labels'      => [
+			'name'          => __( 'Netr Team', 'traveltheme' ),
+			'singular_name' => __( 'Netr Team', 'traveltheme' ),
+		],
+		'public'      => true,
+		'has_archive' => true,
+		'rewrite'     => ['slug' => 'netr_team'],
+		'menu_icon'   => '',
+		'taxonomies' => ['travel_country', 'travel_sport_league', 'travel_sport_type', 'travel_type'],
+		'supports'    => ['title', 'editor', 'thumbnail', 'custom-fields'],
+	] );
+}
+
+add_action( 'init', 'netr_team', 5 );
+
 function travel_age()
 {
 	$labels = [
