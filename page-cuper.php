@@ -20,26 +20,26 @@ $cup_query = new WP_Query
 ]);
 
 get_template_part('template-parts/headingfourpics');
-
+?>
+<div class="container">
+    <div class="row row-cols-3">
+<?php
 if ( $cup_query->have_posts() ) :
     while ( $cup_query->have_posts() ) : $cup_query->the_post(); ?>
-        <article <?php
-        post_class(); ?> id="post-<?php
-        the_ID(); ?>">
-            <a href="<?php
-            the_permalink(); ?>"><h2><?php
-                    the_title(); ?></h2></a>
-            <div id="our-post-thumbnail">
-                <?php
-                the_post_thumbnail( 'travel-gallery' ); ?>
+    <div class="col" style="margin: 1rem 0;">
+        <div class="card" style="width: 18rem;">
+            <img src="../wp-content/uploads/2022/05/mig.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><?php the_title(); ?></h5>
+                <p class="card-text"><?php the_excerpt() ?></p>
+                <a href="<?php the_permalink();?>" class="btn btn-primary">Visa mer</a>
             </div>
-            <?php
-            the_content(); ?>
-        </article>
+        </div>
+    </div>
     <?php
     endwhile; endif; wp_reset_postdata();
 ?>
-
+</div>
 </div>
 
 <?php
