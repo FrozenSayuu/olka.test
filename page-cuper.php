@@ -1,10 +1,7 @@
 <?php
 
 get_header();
-?>
 
-<div class="cup">
-<?php
 $cup_query = new WP_Query
 ([
     'post_type' => 'travel_cup',
@@ -18,6 +15,11 @@ $cup_query = new WP_Query
         ],
     ],
 ]);
+?>
+
+<div class="cup">
+    
+<?php
 
 get_template_part('template-parts/headingfourpics');
 ?>
