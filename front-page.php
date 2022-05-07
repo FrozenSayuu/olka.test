@@ -2,6 +2,11 @@
 
 get_header();
 
+$travel_query = new WP_Query
+([
+	'post_type' => 'wcm_travel',
+	'posts_per_page' => 9
+])
 ?>
 
 <div class="index-cont">
@@ -24,8 +29,8 @@ get_header();
 	</div>
 
 	<div class="quick-btn">
-		<a href="traningsresor">TRÄNINGSLÄGER</a>
-		<a href="cupper">CUPPER</a>
+		<a href="traningslager">TRÄNINGSLÄGER</a>
+		<a href="cuper">CUPPER</a>
 		<a href="fotbollsresor">FOTBOLLSLÄGER</a>
 		<a href="sportresor">SPORTLÄGER</a>
 	</div>
