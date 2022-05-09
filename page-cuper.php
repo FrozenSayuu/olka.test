@@ -9,9 +9,7 @@ $cup_query = new WP_Query
         [
             'taxonomy' => 'travel_type',
             'field' => 'slug',
-            'terms' => 'cuper',
-            'meta_key' => 'on_startpage',
-            'meta_value' => true
+            'terms' => 'cuper'
         ],
     ],
 ]);
@@ -24,6 +22,7 @@ $cup_query = new WP_Query
 get_template_part('template-parts/headingfourpics');
 ?>
 <div class="container">
+    <h2>Våra cupper</h2>
     <div class="row row-cols-3">
 <?php
 if ( $cup_query->have_posts() ) :
@@ -39,6 +38,7 @@ if ( $cup_query->have_posts() ) :
         </div>
     </div>
     <?php
+    $count = $cup_query->found_posts();
     endwhile; endif; wp_reset_postdata();
 ?>
 </div>

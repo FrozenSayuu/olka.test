@@ -52,7 +52,7 @@ if ( $camp_query->have_posts() ) :
     <?php
     endwhile; endif; wp_reset_postdata();
 ?>
-</div>
+	</div>
 </div>
 
 <?php 
