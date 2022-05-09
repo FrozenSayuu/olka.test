@@ -7,13 +7,19 @@ $camp_query = new WP_Query
 	'post_type' => 'travel_camp',
 	'posts_per_page' => 9
 ]);
+
+$rec_query = new WP_Query
+([
+	'post_type' => 'page',
+	'posts_per_page' => 3
+]);
 ?>
 
 <div class="training-cont">
 	<div id="slider-cont">
 		<div class="slider">
 			<?php
-			echo do_shortcode('[smartslider3 slider="2"]');
+			echo do_shortcode('[smartslider3 slider="3"]');
 			?>
 		</div>
 		<div id="slider-txt">
@@ -22,9 +28,32 @@ $camp_query = new WP_Query
             <button>Boka nu</button>
         </div>
 	</div>
-<?php
 
-get_template_part('template-parts/headingfourpics');
+	<div class="heading-det">
+        <div id="heading-title">
+            <h2>Rubrik</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quos facilis repellendus dolores non ipsa aliquam ipsam, asperiores qui fugit?</p>
+        </div>
+        <div id="heading-imgs">
+			<div class="row row-cols-2">
+<?php
+	if ( $camp_query->have_posts() ) :
+		$camp4_query = new WP_Query
+		([
+			'post_type' => 'travel_camp',
+			'posts_per_page' => 4
+		]);
+    while ( $camp4_query->have_posts() ) : $camp4_query->the_post(); ?>
+		
+		<div style="margin: 1rem 0" class="col">
+			<div id="our-post-thumbnail"><?php the_post_thumbnail('travel-gallery'); ?></div>
+		</div>
+		<?php endwhile; endif; wp_reset_postdata(); ?>
+        </div>
+    </div>
+	</div>
+
+<?php
 get_template_part('template-parts/latestnews');
 get_template_part('template-parts/reviewbox');
 

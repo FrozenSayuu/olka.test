@@ -50,12 +50,12 @@ $camp_query = new WP_Query
 
 	<div class="container">
 		<h2>Sista minuten!</h2>
-		<div class="row" style="margin-bottom: 5rem;">
+		<div class="row row-cols-3" style="margin-bottom: 5rem;">
 <?php
 if ( $camp_query->have_posts() ) :
     while ( $camp_query->have_posts() ) : $camp_query->the_post(); ?>
 		<div class="col">
-			<img src="./wp-content/uploads/2022/05/mig.jpeg">
+			<div id="our-post-thumbnail"><?php the_post_thumbnail('travel-gallery'); ?></div>
 			<h4><?php the_title() ?></h4>
 			<p><?php the_excerpt() ?></p>
 			<a href="<?php the_permalink();?>" class="btn btn-primary">Visa mer</a>
@@ -66,12 +66,12 @@ if ( $camp_query->have_posts() ) :
 
 <div class="container">
 	<h2>Heta ställen just nu!</h2>
-	<div class="row" style="margin-bottom: 5rem;">
+	<div class="row row-cols-3" style="margin-bottom: 5rem;">
 <?php
 if ( $conf_query->have_posts() ) :
     while ( $conf_query->have_posts() ) : $conf_query->the_post(); ?>
 		<div class="col">
-			<img src="./wp-content/uploads/2022/05/mig.jpeg">
+		<div id="our-post-thumbnail"><?php the_post_thumbnail('travel-gallery'); ?></div>
 			<h4><?php the_title() ?></h4>
 			<p><?php the_excerpt() ?></p>
 			<a href="<?php the_permalink();?>" class="btn btn-primary">Visa mer</a>
