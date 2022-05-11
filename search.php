@@ -18,7 +18,7 @@
 			next_post_link();
 		endif;
 	else :
-		_e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+		_e( 'Hoppsan! Inga träffar matchade din sökning.', 'textdomain' );
 	endif;
 	?>
 

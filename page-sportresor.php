@@ -9,6 +9,21 @@ $sport_query = new WP_Query
 ]);
 ?>
 
+<div id="slider-cont">
+		<div class="slider">
+			<?php
+			echo do_shortcode('[smartslider3 slider="5"]');
+			?>
+		</div>
+		<div id="slider-txt">
+			<h1>Sportresor för alla tillfällen!</h1>
+			<p>Sugen på att se favorit laget spela? Boka en sportresa för att se laget spela, boende och resa samlat i ett paket!</p>
+            <button>Boka nu</button>
+        </div>
+	</div>
+
+<?php get_template_part('template-parts/reviewbox'); ?>
+
 <div class="container">
     <div>
 	    <h2>Utvalda sportresor</h2>
@@ -35,6 +50,7 @@ if ( $sport_query->have_posts() ) :
 </div>
 </div>
 
-<?php 
+<?php
+get_template_part('template-parts/latestnews');
 get_footer();
 ?>

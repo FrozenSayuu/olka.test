@@ -8,8 +8,7 @@
 		while ( have_posts() ) : the_post(); ?>
 			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 				<h2><?php the_title(); ?></h2>
-				<div id="our-post-thumbnail">
-				</div>
+				<div id="our-post-image"><?php the_post_thumbnail('travel-gallery'); ?></div>
 				<?php the_content(); ?>
 			</article>
 		<?php
@@ -20,7 +19,7 @@
 			next_post_link();
 		endif;
 	else :
-		_e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+		_e( 'Oj hoppsan, här var det tomt.', 'textdomain' );
 	endif;
 	?>
 

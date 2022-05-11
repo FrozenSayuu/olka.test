@@ -7,12 +7,6 @@ $camp_query = new WP_Query
 	'post_type' => 'travel_camp',
 	'posts_per_page' => 9
 ]);
-
-$rec_query = new WP_Query
-([
-	'post_type' => 'page',
-	'posts_per_page' => 3
-]);
 ?>
 
 <div class="training-cont">
@@ -23,16 +17,16 @@ $rec_query = new WP_Query
 			?>
 		</div>
 		<div id="slider-txt">
-			<h1>sälj rubrik här</h1>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ullam iste nisi velit?</p>
+			<h1>Välkommen till våra träningsläger!</h1>
+			<p>Sugen på träningsläger? Här nedan hittar du alla olika sorters läger för alla åldrar, kön och sporter. Här kan du titta runt och spana in de olika lägren vi har om du är osäker på vad du är ute efter. Om du redan vet vad du vill boka så kan du trycka på knappen och säkra din plats på lägret!</p>
             <button>Boka nu</button>
         </div>
 	</div>
 
 	<div class="heading-det">
         <div id="heading-title">
-            <h2>Rubrik</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quos facilis repellendus dolores non ipsa aliquam ipsam, asperiores qui fugit?</p>
+            <h2>Välkommen till våra träningsläger!</h2>
+            <p>I vårt utbud hittar du läger för flickor och pojkar, små som tonåring samt de flesta sporter som finns. Padel, tennis, fotboll, yoga, ishockey och fler! På denna sida hittar du inspiration på olika läger som finns, få information och boka de som du eller dina barn vill delta på! Vare sig favorit sport eller prova på något nytt så har vi lägret för dig!</p>
         </div>
         <div id="heading-imgs">
 			<div class="row row-cols-2">
@@ -45,19 +39,16 @@ $rec_query = new WP_Query
 		]);
     while ( $camp4_query->have_posts() ) : $camp4_query->the_post(); ?>
 		
-		<div style="margin: 1rem 0" class="col">
-			<div id="our-post-thumbnail"><?php the_post_thumbnail('travel-gallery'); ?></div>
+		<div class="col heading-img">
+			<?php the_post_thumbnail('travel-gallery'); ?>
 		</div>
 		<?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
     </div>
 	</div>
 
-<?php
-get_template_part('template-parts/latestnews');
-get_template_part('template-parts/reviewbox');
+<?php get_template_part('template-parts/reviewbox'); ?>
 
-?>
  <div class="container">
 		<div>
 			<h2>Utvalda läger</h2>
@@ -85,6 +76,7 @@ if ( $camp_query->have_posts() ) :
 </div>
 
 <?php 
+get_template_part('template-parts/latestnews');
 
 get_footer();
 

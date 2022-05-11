@@ -1,7 +1,7 @@
     <footer class="site-footer">
         <div class="footer-txt">
             <h2><?php bloginfo('name') ?></h2>
-            <p>blablablabla</p>
+            <p><?php bloginfo( 'description' ); ?></p>
 
         </div>
 
@@ -16,7 +16,7 @@
     
         <div class="footer-rights">
             <p>© 2022 <?php bloginfo( 'name' ) ?>. All Rights Reserved.</p>
-            <a href="#">Privacy Policy</a>
+            <a href="../privacy-policy/">Privacy Policy</a>
             <a href="#">Terms of Service</a>
         </div>
     </footer>

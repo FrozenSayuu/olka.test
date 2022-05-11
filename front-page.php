@@ -54,8 +54,8 @@ $camp_query = new WP_Query
 <?php
 if ( $camp_query->have_posts() ) :
     while ( $camp_query->have_posts() ) : $camp_query->the_post(); ?>
-		<div class="col">
-			<div id="our-post-thumbnail"><?php the_post_thumbnail('travel-gallery'); ?></div>
+		<div class="col featured">
+			<?php the_post_thumbnail('travel-gallery'); ?>
 			<h4><?php the_title() ?></h4>
 			<p><?php the_excerpt() ?></p>
 			<a href="<?php the_permalink();?>" class="btn btn-primary">Visa mer</a>
@@ -70,8 +70,8 @@ if ( $camp_query->have_posts() ) :
 <?php
 if ( $conf_query->have_posts() ) :
     while ( $conf_query->have_posts() ) : $conf_query->the_post(); ?>
-		<div class="col">
-		<div id="our-post-thumbnail"><?php the_post_thumbnail('travel-gallery'); ?></div>
+		<div class="col featured">
+		<?php the_post_thumbnail('travel-gallery'); ?>
 			<h4><?php the_title() ?></h4>
 			<p><?php the_excerpt() ?></p>
 			<a href="<?php the_permalink();?>" class="btn btn-primary">Visa mer</a>

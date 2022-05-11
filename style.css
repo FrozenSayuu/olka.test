@@ -6,9 +6,15 @@
  Text Domain:  traveltheme
 */
 
+body
+{
+    background-color:aquamarine;
+}
+
 #slider-cont
 {
-    position: relative
+    position: relative;
+    padding-bottom: 5rem;
 }
 
 #slider-txt
@@ -65,7 +71,7 @@
     color: black;
 }
 
-.header-btn
+#header-btn
 {
     margin: auto;
 }
@@ -101,14 +107,18 @@
     text-decoration: none;
 }
 
-#our-post-thumbnail
+#our-post-image
 {
     position: relative;
+    width: 800px;
+    height: 400px;
+    margin: 1rem;
 }
 
-#our-post-thumbnail img
+#our-post-image img, #our-post-thumbnail img
 {
-    width: -webkit-fill-available;
+    width: inherit;
+    height: inherit;
 }
 
 .newsletter
@@ -144,7 +154,6 @@
     text-align: center;
     margin: auto;
     padding-top: 10rem;
-    width: 80%;
     padding-bottom: 5rem;
 }
 
@@ -161,41 +170,75 @@
     padding-right: 1rem;
 }
 
+.heading-img
+{
+    position: relative;
+    margin: 1rem 0;
+    height: 100%;
+    width: 100%;
+}
+
+.heading-img img
+{
+    height: inherit;
+    width: inherit;
+}
+
 #heading-imgs
 {
     grid-column: 2;
     grid-row: 1 / span 2;
 }
 
-#heading-imgs img
+.featured
 {
-    height: 300px;
+    position: relative;
+    height: 100%;
+    width: 100%;
     margin: auto;
+}
+
+.featured img
+{
+    height: inherit;
+    width: inherit;
+    margin-bottom: 1rem;
 }
 
 .news-cont
 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 2fr 1fr;
-    width: 80%;
+    padding-top: 5rem;
 }
 
-.news-cont p
+.news-box
 {
-    width: 50ch;
+    text-align: center;
 }
 
 .news
 {
     grid-row: 2;
-    text-align: center;
-    margin: auto;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
 }
 
-.news img, .featured img
+.news-img
 {
-    height: 300px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    grid-row: 1;
+}
+
+.news img
+{
+    height: inherit;
+    width: inherit;
+}
+
+.news-txt
+{
+    grid-row: 2;
 }
 
 .news-date
@@ -207,20 +250,22 @@
 
 #news-btn
 {
-    grid-row: 3;
-    grid-column: 2;
     margin: auto;
 }
 
 .review
 {
-    width: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
     margin: auto;
-    grid-gap: 1rem;
+    grid-gap: 1.5rem;
     margin-bottom: 5rem;
+}
+
+#rev-title
+{
+    grid-column: 1 / span 2;
 }
 
 .review-box
@@ -236,21 +281,22 @@
     grid-column: 1;
     grid-row: 1;
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 #rev-img img
 {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: -webkit-fill-available;
+    height: inherit;
+    width: inherit;
 }
 
 #rev-head
 {
     grid-column: 2;
     grid-row: 1;
+    text-align: center;
+    margin: auto;
 }
 
 #rev-txt
