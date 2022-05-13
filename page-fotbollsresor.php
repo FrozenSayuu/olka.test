@@ -29,7 +29,7 @@ $soccer_query = new WP_Query
 
 	<div class="fotboll container">
 		<h2>Utvalda fotbollsresor</h2>
-		<p>Klicka <a href="../soccer">här</a> för att se fler!</p>
+		<p>Klicka <a href="../soccer"  style="color: black; text-decoration: underline;">här</a> för att se fler!</p>
     	<div class="row row-cols-3">
 <?php
 if ( $soccer_query->have_posts() ) :

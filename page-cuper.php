@@ -19,7 +19,7 @@ $cup_query = new WP_Query
     <div class="heading-det container">
         <div id="heading-title">
             <h2>Vårt utbud av cuper för alla åldrar</h2>
-            <p>Fotboll? Ishockey? Simning? Ja, vi har det! Kolla igenom våra cuper för att hitta just den perfekta för dig eller för ditt lag.</p>
+            <h5>Fotboll? Ishockey? Simning? Ja, vi har det! Kolla igenom våra cuper för att hitta just den perfekta för dig eller för ditt lag.</h5>
         </div>
         <div id="heading-imgs">
 			<div class="row row-cols-2">
@@ -49,7 +49,7 @@ $cup_query = new WP_Query
 
     <div class="cuper container">
         <h2>Våra cupper</h2>
-        <p>Visa alla våra cupper <a href="../cupps">här</a></p>
+        <p>Visa alla våra cupper <a href="../cupps"  style="color: black; text-decoration: underline;">här</a></p>
         <div class="row row-cols-3">
 <?php
 if ( $cup_query->have_posts() ) :

@@ -4,10 +4,17 @@
 	<?php
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post(); ?>
-			<article style="margin-bottom: 15rem;" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+			<article style="margin-bottom: 5rem;" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 				<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
-				<div id="our-post-image"><?php the_post_thumbnail('travel-gallery'); ?></div>
-				<?php the_excerpt(); ?>
+
+				<?php
+				if( get_the_post_thumbnail() ) : ?>
+					<div id="our-post-image">
+						<?php the_post_thumbnail('travel-gallery'); ?>
+					</div>
+				<?php
+				endif; 
+				the_excerpt(); ?>
 				<a href="<?php the_permalink();?>" class="btn btn-primary">Visa hela</a>
 			</article>
 		<?php

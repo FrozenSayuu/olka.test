@@ -1,14 +1,25 @@
-<?php get_header(); ?>
-<h1>Ditt sökresultat</h1>
-<div class="">
+<?php get_header();
+global $query_string;
+$search = trim($query_string, "s=");
+?>
+
+<div class="search-cont">
+	<h1>Ditt sökresultat för <?php echo $search; ?>:</h1>
+
 	<?php
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post(); ?>
-			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+			<article style="margin-bottom: 5rem;" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 				<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
-				<div id="our-post-thumbnail">
-				</div>
-				<?php the_excerpt(); ?>
+				<?php
+				if( get_the_post_thumbnail() ) : ?>
+					<div id="our-post-image">
+						<?php the_post_thumbnail('travel-gallery'); ?>
+					</div>
+				<?php
+				endif; 
+				the_excerpt(); ?>
+				<a href="<?php the_permalink();?>" class="btn btn-primary">Visa hela</a>
 			</article>
 		<?php
 		endwhile;
