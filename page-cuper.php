@@ -47,21 +47,23 @@ $cup_query = new WP_Query
         </div>
 	</div>
 
-    <div class="container">
+    <div class="cuper container">
         <h2>Våra cupper</h2>
         <p>Visa alla våra cupper <a href="../cupps">här</a></p>
         <div class="row row-cols-3">
 <?php
 if ( $cup_query->have_posts() ) :
     while ( $cup_query->have_posts() ) : $cup_query->the_post(); ?>
-    <div class="col" style="margin: 1rem 0;">
+    <div class="col cuper-body">
         <div class="card" style="width: 18rem;">
-        <div class="card-img-top" id="our-post-thumbnail"><?php the_post_thumbnail('travel-gallery'); ?></div>
-            <div class="card-body">
-                <h5 class="card-title"><?php the_title(); ?></h5>
-                <p class="card-text"><?php the_excerpt() ?></p>
-                <a href="<?php the_permalink();?>" class="btn btn-primary">Visa mer</a>
+            <div class="card-img-top"><?php the_post_thumbnail('travel-gallery'); ?></div>
+            <div class="cup-text">
+                <a href="<?php the_permalink(); ?>"><h5 class="card-title"><?php the_title(); ?></h5></a>
+                <?php the_excerpt() ?>
             </div>
+        </div>
+        <div class="cup-btn">
+            <a href="<?php the_permalink();?>" class="btn btn-primary">Visa mer</a>
         </div>
     </div>
     <?php

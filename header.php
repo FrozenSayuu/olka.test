@@ -11,10 +11,12 @@
 <body <?php body_class(); ?>>
 <div class="container">
     <header class="site-header">
-        <div id="header-title">
+    <div class="header-icon">
+        <a href="<?php echo home_url(); ?>"><img src="<?php site_icon_url(); ?>" alt="flygplans icon"></a>
+        <div class="header-title">
             <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-            <h4><?php bloginfo( 'description' ); ?></h4>
         </div>
+    </div>
         <?php wp_nav_menu(['theme_location' => 'primary', 'container' => 'nav']); ?>
         <div id="header-btn">
             <button>Boka här!</button>

@@ -7,9 +7,7 @@ $soccer_query = new WP_Query
 		'taxonomy' => 'travel_sport_type',
 		'field' => 'slug',
 		'terms' => 'fotboll',
-		'meta_key' => 'on_startpage',
-		'meta_value' => 'true'
-	]
+	],
 ]);
 
 ?>
@@ -29,22 +27,24 @@ $soccer_query = new WP_Query
         </div>
 	</div>
 
-	<div class="container" style="margin: 5rem 0;">
+	<div class="fotboll container">
 		<h2>Utvalda fotbollsresor</h2>
 		<p>Klicka <a href="../soccer">här</a> för att se fler!</p>
     	<div class="row row-cols-3">
 <?php
 if ( $soccer_query->have_posts() ) :
     while ( $soccer_query->have_posts() ) : $soccer_query->the_post(); ?>
-    <div class="col" style="margin: 1rem 0;">
+    <div class="col fotboll-body">
         <div class="card" style="width: 18rem;">
-			<div class="card-img-top" id="our-post-thumbnail"><?php the_post_thumbnail('travel-gallery'); ?></div>
-            <div class="card-body">
-                <h5 class="card-title"><?php the_title(); ?></h5>
-                <p class="card-text"><?php the_excerpt() ?></p>
-                <a href="<?php the_permalink();?>" class="btn btn-primary">Visa mer</a>
+			<div class="card-img-top"><?php the_post_thumbnail('travel-gallery'); ?></div>
+            <div class="fotboll-text">
+                <a href="<?php the_permalink(); ?>"><h5 class="card-title"><?php the_title(); ?></h5></a>
+                <?php the_excerpt() ?>
             </div>
-        </div>
+		</div>
+		<div class="fotboll-btn">
+			<a href="<?php the_permalink();?>" class="btn btn-primary">Visa mer</a>
+		</div>
     </div>
     <?php
     endwhile; endif; wp_reset_postdata();

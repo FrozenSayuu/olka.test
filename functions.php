@@ -289,8 +289,8 @@ function travel_type()
         'labels' => $labels,
         'show_ui' => true,
         'show_admin_key' => true,
-        'query_var' => true,
-        'rewrite' => array('slug' => 'travel_type')
+        'rewrite' => array('slug' => 'travel_type'),
+		'public' => true
     ];
 	register_taxonomy( 'travel_type' , ['wcm_travel', 'travel_camp', 'travel_cup', 'travel_matches', 'page'], $args );
 }
